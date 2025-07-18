@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marrakesh Concierge - Your Personal Luxury Service</title>
+    <meta name="description" content="Luxury concierge service in Marrakesh. Personal assistance, exclusive experiences, and seamless travel arrangements. Your gateway to the Red City." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="icon" type="image/x-icon" href="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=32&h=32&fit=crop&crop=center" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fmarrakesh7936back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-sm border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 3L28 15H34L26 22L30 32L20 27L10 32L14 22L6 15H12L20 3Z"/>
+                        <path d="M20 10L25 18H30L25 22L28 30L20 25L12 30L15 22L10 18H15L20 10Z" fill="white"/>
+                    </svg>
+                    <span class="ml-3 text-xl font-playfair font-semibold text-secondary">Marrakesh Concierge</span>
+                </div>
+                
+                <!-- Language Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button id="langToggle" class="flex items-center space-x-2 px-3 py-2 rounded-lg border border-border hover:bg-primary/10 transition-colors">
+                        <span class="text-sm font-medium">EN</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4"/>
+                        </svg>
+                    </button>
+                    <a href="tel:+212123456789" class="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        <span class="text-sm font-medium">Direct Contact</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0" id="heroImageContainer">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Marrakesh landscape" class="w-full h-full object-cover transition-opacity duration-1000" loading="eager" />
+        </div>
+        
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+        
+        <!-- Content -->
+        <div class="relative z-20 text-center text-white px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold mb-4 leading-tight">
+                <span class="block" data-en="Your Personal Concierge" data-fr="Votre Concierge Personnel">Your Personal Concierge</span>
+                <span class="block text-primary" data-en="in Marrakesh" data-fr="à Marrakech">in Marrakesh</span>
+            </h1>
+            
+            <p class="text-lg sm:text-xl mb-6 font-source-sans leading-relaxed opacity-90" data-en="Luxury, Simplicity, Exclusivity" data-fr="Luxe, Simplicité, Exclusivité">
+                Luxury, Simplicity, Exclusivity
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="btn-primary text-lg px-8 py-4 w-full sm:w-auto" data-en="Book a Service" data-fr="Réserver un Service" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    Book a Service
+                </button>
+                
+                <a href="tel:+212123456789" class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-6 py-4 rounded-lg hover:bg-white/30 transition-colors w-full sm:w-auto justify-center">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                    <span data-en="Direct Call" data-fr="Appel Direct">Direct Call</span>
+                </a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-8 flex flex-wrap justify-center items-center gap-6 opacity-80">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="text-sm font-medium" data-en="Local Expertise" data-fr="Expertise Locale">Local Expertise</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <span class="text-sm font-medium" data-en="Luxury Services" data-fr="Services de Luxe">Luxury Services</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l2.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span class="text-sm font-medium" data-en="24/7 Available" data-fr="24/7 Disponible">24/7 Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+<section id="services" class="py-20 bg-background">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-secondary mb-6" data-en="Our Services" data-fr="Nos Services">
+        Nos Services
+      </h2>
+      <p class="text-xl text-text-secondary max-w-3xl mx-auto" data-en="Comprehensive and personalized concierge services for Airbnb property owners in Amiens and the Somme." data-fr="Services de conciergerie complets et personnalisés pour les propriétaires de locations Airbnb à Amiens et dans la Somme.">
+        Services de conciergerie complets et personnalisés pour les propriétaires de locations Airbnb à Amiens et dans la Somme.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Gestion complète -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Full Apartment Management" data-fr="Gestion Complète des Appartements">
+            Gestion Complète des Appartements
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="From guest check-in to cleaning and listings, we handle all aspects of your Airbnb rental in Amiens." data-fr="Du check-in au ménage en passant par la gestion des annonces, nous gérons tous les aspects de votre location Airbnb à Amiens.">
+            Du check-in au ménage en passant par la gestion des annonces, nous gérons tous les aspects de votre location Airbnb à Amiens.
+          </p>
+        </div>
+      </div>
+
+      <!-- Services personnalisés -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Tailored Services" data-fr="Services Personnalisés">
+            Services Personnalisés
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="Each owner is unique. We offer tailor-made concierge solutions adapted to your rental needs." data-fr="Chaque propriétaire est unique. Nous proposons des solutions sur mesure adaptées à vos besoins locatifs.">
+            Chaque propriétaire est unique. Nous proposons des solutions sur mesure adaptées à vos besoins locatifs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Partenariats entreprises -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Corporate Partnerships" data-fr="Partenariats d'Entreprises">
+            Partenariats d'Entreprises
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="We manage rentals for professionals visiting Amiens, ensuring a steady income through company partnerships." data-fr="Nous gérons les séjours de professionnels à Amiens, vous garantissant des revenus réguliers via nos partenariats locaux.">
+            Nous gérons les séjours de professionnels à Amiens, vous garantissant des revenus réguliers via nos partenariats locaux.
+          </p>
+        </div>
+      </div>
+
+      <!-- Création et optimisation annonces -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 5 11 7 13.28C14 20 19 12.87 19 9c0-3.87-3.13-7-7-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Airbnb Listing Optimization" data-fr="Création et Optimisation d'Annonces">
+            Création et Optimisation d'Annonces
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="We create and optimize your Airbnb listings with photos, descriptions, and welcome booklets to attract guests." data-fr="Nous créons et optimisons vos annonces Airbnb avec visuels, descriptifs et livrets d’accueil pour séduire les voyageurs.">
+            Nous créons et optimisons vos annonces Airbnb avec visuels, descriptifs et livrets d’accueil pour séduire les voyageurs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ménage professionnel -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 6l3 1v9.17C4.84 15.4 4 14.3 4 13V7l-1-.5L3 6zm7 0h4v3h-4V6zm0 4h4v3h-4v-3zm0 4h4v3h-4v-3zM2 20h20v2H2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Professional Cleaning" data-fr="Ménage Professionnel Airbnb">
+            Ménage Professionnel Airbnb
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="We ensure spotless apartments between guests to maintain quality and enhance guest experience." data-fr="Nous garantissons des appartements impeccables entre chaque locataire pour maintenir la qualité de votre bien.">
+            Nous garantissons des appartements impeccables entre chaque locataire pour maintenir la qualité de votre bien.
+          </p>
+        </div>
+      </div>
+
+      <!-- Maintenance et entretien -->
+      <div class="card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9-5-16-2 7H2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-playfair font-semibold text-secondary mb-3" data-en="Property Maintenance" data-fr="Maintenance et Entretien">
+            Maintenance et Entretien
+          </h3>
+          <p class="text-text-secondary mb-4" data-en="We handle small repairs and regular upkeep to keep your apartment in perfect condition." data-fr="Nous gérons les petites réparations et l'entretien régulier pour préserver l'état de votre logement.">
+            Nous gérons les petites réparations et l'entretien régulier pour préserver l'état de votre logement.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-secondary mb-6" data-en="Why Choose Marrakesh Concierge?" data-fr="Pourquoi Choisir Marrakesh Concierge ?">
+                    Why Choose Marrakesh Concierge?
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto" data-en="Our deep local knowledge and personalized approach create unforgettable experiences in the Red City." data-fr="Notre connaissance locale approfondie et notre approche personnalisée créent des expériences inoubliables dans la Ville Rouge.">
+                    Our deep local knowledge and personalized approach create unforgettable experiences in the Red City.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Local Expertise -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4" data-en="Local Expertise & Connections" data-fr="Expertise Locale & Connexions">
+                        Local Expertise & Connections
+                    </h3>
+                    <p class="text-text-secondary leading-relaxed" data-en="Born and raised in Marrakesh, we have deep connections throughout the city and access to exclusive experiences not available to tourists." data-fr="Nés et élevés à Marrakech, nous avons des connexions profondes dans toute la ville et accès à des expériences exclusives non disponibles aux touristes.">
+                        Born and raised in Marrakesh, we have deep connections throughout the city and access to exclusive experiences not available to tourists.
+                    </p>
+                </div>
+                
+                <!-- Personalized Service -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4" data-en="Bespoke Experiences" data-fr="Expériences Sur-Mesure">
+                        Bespoke Experiences
+                    </h3>
+                    <p class="text-text-secondary leading-relaxed" data-en="Every service is tailored to your unique preferences, creating personalized itineraries that reflect your individual style and interests." data-fr="Chaque service est adapté à vos préférences uniques, créant des itinéraires personnalisés qui reflètent votre style et vos intérêts individuels.">
+                        Every service is tailored to your unique preferences, creating personalized itineraries that reflect your individual style and interests.
+                    </p>
+                </div>
+                
+                <!-- 24/7 Support -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-playfair font-semibold text-secondary mb-4" data-en="24/7 Dedicated Support" data-fr="Support Dédié 24/7">
+                        24/7 Dedicated Support
+                    </h3>
+                    <p class="text-text-secondary leading-relaxed" data-en="Our team is available around the clock to ensure your experience is seamless, from planning to execution and beyond." data-fr="Notre équipe est disponible 24h/24 pour garantir que votre expérience soit parfaite, de la planification à l'exécution et au-delà.">
+                        Our team is available around the clock to ensure your experience is seamless, from planning to execution and beyond.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-secondary mb-6" data-en="Client Testimonials" data-fr="Témoignages Clients">
+                    Client Testimonials
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto" data-en="Hear from our satisfied clients who experienced the magic of Marrakesh through our services." data-fr="Écoutez nos clients satisfaits qui ont vécu la magie de Marrakech à travers nos services.">
+                    Hear from our satisfied clients who experienced the magic of Marrakesh through our services.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face" alt="Client portrait" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?w=60&h=60&fit=crop&crop=face'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-secondary">Sarah L.</h4>
+                            <p class="text-sm text-text-secondary" data-en="New York, USA" data-fr="New York, États-Unis">New York, USA</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary italic" data-en="The desert experience was absolutely magical! From the luxury camp to the private camel trek, every detail was perfect. Truly unforgettable!" data-fr="L'expérience du désert était absolument magique ! Du camp de luxe au trek privé à dos de chameau, chaque détail était parfait. Vraiment inoubliable !">
+                        "The desert experience was absolutely magical! From the luxury camp to the private camel trek, every detail was perfect. Truly unforgettable!"
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face" alt="Client portrait" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.pixabay.com/photo-2016/11/21/12/42/beard-1845166_960_720.jpg'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-secondary">James M.</h4>
+                            <p class="text-sm text-text-secondary" data-en="London, UK" data-fr="Londres, Royaume-Uni">London, UK</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary italic" data-en="Exceptional service and genuine local knowledge. The riad they booked was stunning and the private souk tour revealed hidden gems I never would have found." data-fr="Service exceptionnel et connaissance locale authentique. Le riad qu'ils ont réservé était magnifique et la visite privée du souk a révélé des joyaux cachés que je n'aurais jamais trouvés.">
+                        "Exceptional service and genuine local knowledge. The riad they booked was stunning and the private souk tour revealed hidden gems I never would have found."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face" alt="Client portrait" class="w-12 h-12 rounded-full object-cover mr-4" loading="lazy" onerror="this.src='https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?w=60&h=60&fit=crop&crop=face'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-secondary">Emma K.</h4>
+                            <p class="text-sm text-text-secondary" data-en="Sydney, Australia" data-fr="Sydney, Australie">Sydney, Australia</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-text-secondary italic" data-en="The culinary experience was incredible! The private cooking class and exclusive restaurant reservations made our trip truly special. Highly recommended!" data-fr="L'expérience culinaire était incroyable ! Le cours de cuisine privé et les réservations de restaurants exclusifs ont rendu notre voyage vraiment spécial. Hautement recommandé !">
+                        "The culinary experience was incredible! The private cooking class and exclusive restaurant reservations made our trip truly special. Highly recommended!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-playfair font-bold text-secondary mb-6" data-en="Book Your Experience" data-fr="Réservez Votre Expérience">
+                    Book Your Experience
+                </h2>
+                <p class="text-xl text-text-secondary max-w-2xl mx-auto" data-en="Tell us about your dream Marrakesh experience and we'll create a personalized itinerary just for you." data-fr="Parlez-nous de votre expérience de rêve à Marrakech et nous créerons un itinéraire personnalisé rien que pour vous.">
+                    Tell us about your dream Marrakesh experience and we'll create a personalized itinerary just for you.
+                </p>
+            </div>
+            
+            <div class="card max-w-2xl mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <!-- Personal Information -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-text-primary mb-2" data-en="Name *" data-fr="Nom *">Name *</label>
+                            <input type="text" id="name" name="name" required class="form-input" placeholder="Your full name" />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-text-primary mb-2" data-en="Email *" data-fr="Email *">Email *</label>
+                            <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com" />
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-text-primary mb-2" data-en="Phone *" data-fr="Téléphone *">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required class="form-input" placeholder="+1 234 567 8900" />
+                    </div>
+                    
+                    <!-- Service Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary mb-4" data-en="Service Interest" data-fr="Service d'Intérêt">
+                            Service Interest
+                        </label>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="serviceType" value="desert-experience" class="w-4 h-4 text-primary border-border focus:ring-primary" />
+                                <span class="text-sm" data-en="Desert Experience" data-fr="Expérience Désertique">Desert Experience</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="serviceType" value="riad-booking" class="w-4 h-4 text-primary border-border focus:ring-primary" />
+                                <span class="text-sm" data-en="Riad Booking" data-fr="Réservation Riad">Riad Booking</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="serviceType" value="souk-tours" class="w-4 h-4 text-primary border-border focus:ring-primary" />
+                                <span class="text-sm" data-en="Souk Tours" data-fr="Visites des Souks">Souk Tours</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="serviceType" value="culinary-experience" class="w-4 h-4 text-primary border-border focus:ring-primary" />
+                                <span class="text-sm" data-en="Culinary Experience" data-fr="Expérience Culinaire">Culinary Experience</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-text-primary mb-2" data-en="Tell us about your dream experience" data-fr="Parlez-nous de votre expérience de rêve">Tell us about your dream experience</label>
+                        <textarea id="message" name="message" rows="4" class="form-input resize-none" placeholder="Describe your ideal Marrakesh experience, travel dates, group size, special preferences, or any specific requests..."></textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="text-center pt-6">
+                        <button type="submit" class="btn-primary text-lg px-8 py-4 w-full sm:w-auto" data-en="Book a Service" data-fr="Réserver un Service">
+                            Book a Service
+                        </button>
+                        <p class="text-sm text-text-secondary mt-3" data-en="We'll respond within 24 hours with a personalized proposal" data-fr="Nous répondrons dans les 24 heures avec une proposition personnalisée">
+                            We'll respond within 24 hours with a personalized proposal
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 3L28 15H34L26 22L30 32L20 27L10 32L14 22L6 15H12L20 3Z"/>
+                            <path d="M20 10L25 18H30L25 22L28 30L20 25L12 30L15 22L10 18H15L20 10Z" fill="white"/>
+                        </svg>
+                        <span class="ml-3 text-xl font-playfair font-semibold">Marrakesh Concierge</span>
+                    </div>
+                    <p class="text-gray-300 mb-4" data-en="Your luxury concierge service in Marrakesh. Exclusive experiences and personalized service in the heart of Morocco." data-fr="Votre service de conciergerie de luxe à Marrakech. Expériences exclusives et service personnalisé au cœur du Maroc.">
+                        Your luxury concierge service in Marrakesh. Exclusive experiences and personalized service in the heart of Morocco.
+                    </p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-playfair font-semibold mb-4" data-en="Contact" data-fr="Contact">Contact</h4>
+                    <div class="space-y-3 text-gray-300">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                            </svg>
+                            <span>+212 123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>contact@marrakeshconcierge.com</span>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span>Marrakesh, Morocco</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-playfair font-semibold mb-4" data-en="Quick Links" data-fr="Liens Rapides">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#services" class="block text-gray-300 hover:text-primary transition-colors" data-en="Our Services" data-fr="Nos Services">Our Services</a>
+                        <a href="#why-us" class="block text-gray-300 hover:text-primary transition-colors" data-en="Why Choose Us" data-fr="Pourquoi Nous">Why Choose Us</a>
+                        <a href="#testimonials" class="block text-gray-300 hover:text-primary transition-colors" data-en="Testimonials" data-fr="Témoignages">Testimonials</a>
+                        <a href="#contact" class="block text-gray-300 hover:text-primary transition-colors" data-en="Contact" data-fr="Contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p data-en="© 2025 Marrakesh Concierge – Your luxury gateway to the Red City. All rights reserved." data-fr="© 2025 Marrakesh Concierge – Votre porte d'entrée de luxe vers la Ville Rouge. Tous droits réservés.">
+                    © 2025 Marrakesh Concierge – Your luxury gateway to the Red City. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Phone Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="tel:+212123456789" class="flex items-center justify-center w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-colors">
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Language Toggle Functionality
+        let currentLang = 'en';
+        
+        // Hero Image Rotation
+        const heroImages = [
+            'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+            'https://images.unsplash.com/photo-1517821362941-f7f753200fef?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+            'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+            'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3',
+            'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'
+        ];
+        
+        let currentImageIndex = 0;
+        
+        function rotateHeroImage() {
+            const heroImage = document.getElementById('heroImage');
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            
+            // Fade out
+            heroImage.style.opacity = '0';
+            
+            // Change image after fade out
+            setTimeout(() => {
+                heroImage.src = heroImages[currentImageIndex];
+                heroImage.style.opacity = '1';
+            }, 500);
+        }
+        
+        // Start image rotation
+        setInterval(rotateHeroImage, 4000);
+        
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            const elements = document.querySelectorAll('[data-en][data-fr]');
+            
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${currentLang}`);
+            });
+            
+            // Update language toggle button
+            const langToggle = document.getElementById('langToggle');
+            langToggle.querySelector('span').textContent = currentLang.toUpperCase();
+            
+            // Update form placeholders
+            if (currentLang === 'fr') {
+                document.getElementById('name').placeholder = 'Votre nom complet';
+                document.getElementById('email').placeholder = 'votre@email.com';
+                document.getElementById('phone').placeholder = '+212 123 456 789';
+                document.getElementById('message').placeholder = 'Décrivez votre expérience idéale à Marrakech, dates de voyage, taille du groupe, préférences spéciales, ou toute demande spécifique...';
+            } else {
+                document.getElementById('name').placeholder = 'Your full name';
+                document.getElementById('email').placeholder = 'your@email.com';
+                document.getElementById('phone').placeholder = '+1 234 567 8900';
+                document.getElementById('message').placeholder = 'Describe your ideal Marrakesh experience, travel dates, group size, special preferences, or any specific requests...';
+            }
+        }
+        
+        document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Create contact message
+            const message = `New Marrakesh Concierge Request:
+Name: ${formData.get('name')}
+Email: ${formData.get('email')}
+Phone: ${formData.get('phone')}
+Service Interest: ${formData.get('serviceType')}
+Message: ${formData.get('message')}`;
+            
+            // For demo purposes, show success message
+            alert(currentLang === 'en' ? 'Your request has been sent! We will contact you within 24 hours with a personalized proposal.' : 'Votre demande a été envoyée ! Nous vous contacterons dans les 24 heures avec une proposition personnalisée.');
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for fade-in animation
+        document.querySelectorAll('.card, .testimonial-card').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
